@@ -6,7 +6,9 @@ void UBullCowCartridge::BeginPlay() // When the game starts
     Super::BeginPlay();
     PrintLine(TEXT("Hello There!"));
     PrintLine(TEXT("Press TAB to enable console"));
-    HiddenWorld = TEXT("General Kenobi");
+    
+    SetUpGame();
+
 }
 
 void UBullCowCartridge::OnInput(const FString& Input) // When the player hits enter
@@ -22,4 +24,10 @@ void UBullCowCartridge::OnInput(const FString& Input) // When the player hits en
     {
         PrintLine(TEXT("So uncivilized."));
     }
+}
+
+void UBullCowCartridge::SetUpGame()
+{
+    HiddenWorld = TEXT("General Kenobi");
+    Lives = 3;
 }
