@@ -22,7 +22,17 @@ void UBullCowCartridge::OnInput(const FString& Input) // When the player hits en
     }
     else
     {
-        PrintLine(TEXT("So uncivilized."));
+        if (Input.Len() != HiddenWorld.Len())
+        {
+            PrintLine(TEXT("No no no, nothing too fancy."));
+            PrintLine(FString::Printf(TEXT("You are looking for %i characters."), HiddenWorld.Len()));
+
+        }
+
+        if (Lives == 0)
+        {
+            PrintLine(TEXT("So uncivilized."));
+        }
     }
 }
 
